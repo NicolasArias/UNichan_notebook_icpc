@@ -8,6 +8,6 @@ Notebook implemented by UNichan team (https://codeforces.com/team/129750) for IC
 
 
 Credits: 
-https://github.com/ahoraSoyPeor/notebook_descomUNAL
-https://github.com/UNstoppable-CP-Team/Notebook
-https://cp-algorithms.com/
+* https://github.com/ahoraSoyPeor/notebook_descomUNAL
+* https://github.com/UNstoppable-CP-Team/Notebook
+* https://cp-algorithms.com/
