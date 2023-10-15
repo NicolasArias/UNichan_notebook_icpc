@@ -1,7 +1,7 @@
 # UNichan_notebook_icpc
 Notebook implemented by UNichan team (https://codeforces.com/team/129750) for ICPC contests.
 
-#Participants
+## Participants
 - Klaus (https://codeforces.com/profile/Klaus26)
 - mcqueencin (https://codeforces.com/profile/mcqueencin)
 - Aprohack (https://codeforces.com/profile/aprohACk)
