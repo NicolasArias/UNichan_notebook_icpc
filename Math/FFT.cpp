@@ -1,4 +1,24 @@
 ///this fft works in a problem while the other one not
+#define rep(i, a, b) for(int i = a; i < (b); ++i)
+#define per(i, a, b) for(int i = b-1; i>=a ; i--)
+#define trav(a, x) for(auto& a : x)
+#define allin(a , x) for(auto a : x)
+#define all(x) begin(x), end(x)
+#define sz(x) (int)(x).size()
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef vector<ll> vl;
+typedef vector<pii> vpi;
+typedef pair<ll,ll> pll;
+typedef vector<string> vs;
+typedef vector<pll> vpl;
+typedef vector<int> vi;
+ 
+ll cdiv(ll a, ll b) { return a/b+((a^b)>0&&a%b); } // divide a by b rounded up
+ll fdiv(ll a, ll b) { return a/b-((a^b)<0&&a%b); } // divide a by b rounded down
+ 
+#define Unique(v) sort(all(v));v.erase(unique(all(v)),v.end());
+
 typedef complex<double> C;
 typedef vector<double> vd;
 void fft(vector<C>& a) {
