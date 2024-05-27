@@ -54,7 +54,7 @@ lf cross( pt p, pt q ) { return p.x * q.y - q.x * p.y ; }
 
 lf orient( pt a, pt b, pt c ) { return cross( b - a, c - a ); };
 
-lf angle( pt a, pt b , pt o){ return atan2(cross(a-o, b-o), dot(a-o, b-o)); }
+lf angle( pt a, pt b){ return atan2(cross(a, b), dot(a, b)); }
 
 lf abs(pt a) { return sqrt(a.x * a.x + a.y * a.y); }
 
