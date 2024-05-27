@@ -54,6 +54,10 @@ lf cross( pt p, pt q ) { return p.x * q.y - q.x * p.y ; }
 
 lf orient( pt a, pt b, pt c ) { return cross( b - a, c - a ); };
 
+lf angle( pt a, pt b , pt o){ return atan2(cross(a-o, b-o), dot(a-o, b-o)); }
+
+lf abs(pt a) { return sqrt(a.x * a.x + a.y * a.y); }
+
 bool in_angle( pt a, pt b, pt c, pt p ) {
   //assert( fabsl( orient( a, b, c ) ) > E0 );
   if( orient( a, b, c ) < -E0 )
@@ -124,6 +128,28 @@ struct Circle {
     return ( det > E0 ? IN : OUT );
   }
 };
+
+lf part(pt a, pt b, lf r) {
+  lf l = abs(a-b);
+  pt p = (b-a)/l;
+  lf c = dot(a, p), d = 4.0 * (c*c - dot(a, a) + r*r);
+  if (d < EPS) return angle(a, b) * r * r * 0.5;
+  d = sqrt(d) * 0.5;
+  lf s = -c - d, t = -c + d;
+  if (s < 0.0) s = 0.0; else if (s > l) s = l;
+  if (t < 0.0) t = 0.0; else if (t > l) t = l;
+  pt u = a + p*s, v = a + p*t;
+  return (cross(u, v) + (angle(a, u) + angle(v, b)) * r * r) * 0.5;
+}
+
+lf circle_poly_intersection( Circle c, vector<pt> p){
+  lf ans = 0;
+  int n = p.size();
+  for (int i = 0; i < n; i++) {
+    ans += part(p[i]-c.center, p[(i+1)%n]-c.center, c.r);
+  }
+  return abs(ans);
+}
 
 vector< pt > circle_line_intersection( Circle c, line l ) {
   lf h2 = c.r * c.r - l.distance2( c.center );
