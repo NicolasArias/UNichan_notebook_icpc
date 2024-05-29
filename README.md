@@ -3,7 +3,7 @@ Notebook implemented by UNichan team (https://codeforces.com/team/129750) for IC
 
 ## Participants
 - Klaus (https://codeforces.com/profile/Klaus26)
-- mcqueencin (https://codeforces.com/profile/mcqueencin)
+- prins (https://codeforces.com/profile/prins)
 - Aprohack (https://codeforces.com/profile/aprohACk)
 
 
